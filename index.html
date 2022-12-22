@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hey there</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+<body>
+    <style>
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    }
+
+    #text {
+    text-align: center;
+    }
+
+    @media (max-width: 600px) {
+    .container {
+    flex-direction: column;
+    }
+
+    #text {
+    font-size: 0.8rem;
+    }
+    }
+
+
+    </style>
+
+    <main class="container">
+        <p id="text">Hey there! Just wanted to let you know that I'm thinking about you and I appreciate you. You're an important person in my life and I value your presence. Take care! 🤗</p>
+    </main>
+
+    <script>
+        const text = document.getElementById("text");
+        const str = text.textContent;
+        text.textContent = "";
+
+        for (let i = 0; i < str.length; i++) {
+            setTimeout(() => {
+            text.textContent += str[i];
+            }, 80 * i);
+        }
+    </script>
+</body>
+</html>
